@@ -1,0 +1,31 @@
+{
+  "name": "github-webhooks-experiment",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mickvangelderen/github-webhooks-experiment.git"
+  },
+  "author": "Mick van Gelderen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mickvangelderen/github-webhooks-experiment/issues"
+  },
+  "homepage": "https://github.com/mickvangelderen/github-webhooks-experiment#readme",
+  "dependencies": {
+    "babel-cli": "^6.2.0",
+    "babel-core": "^6.2.1",
+    "babel-preset-es2015": "^6.1.18",
+    "bluebird": "^3.0.5",
+    "ezconf": "0.0.0",
+    "is": "^3.1.0",
+    "ramda": "^0.18.0",
+    "request": "^2.67.0",
+    "request-promise": "^1.0.2"
+  }
+}
