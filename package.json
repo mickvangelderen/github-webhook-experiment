@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "babel-node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update": "git pull && npm install",
+    "server": "babel-node server | bunyan -o short"
   },
   "repository": {
     "type": "git",
@@ -22,10 +24,11 @@
     "babel-core": "^6.2.1",
     "babel-preset-es2015": "^6.1.18",
     "bluebird": "^3.0.5",
+    "bunyan": "^1.5.1",
     "ezconf": "0.0.0",
-    "is": "^3.1.0",
+    "koa": "^1.1.2",
+    "koa-bunyan-logger": "^1.3.0",
     "ramda": "^0.18.0",
-    "request": "^2.67.0",
     "request-promise": "^1.0.2"
   }
 }
