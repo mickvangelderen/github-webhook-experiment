@@ -22,4 +22,3 @@ log.info('Starting server.')
 const server = app.listen(port, function() {
 	log.info({ address: server.address() }, 'Started server.')
 })
-
