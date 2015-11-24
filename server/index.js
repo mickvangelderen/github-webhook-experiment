@@ -1,24 +1,30 @@
 import bunyan from 'bunyan'
-import koa from 'koa'
-import koaBunyanLogger from 'koa-bunyan-logger'
+import config from 'ezconf'
+import express from 'express'
+import expressBunyanLogger from 'express-bunyan-logger'
+import bodyParser from 'body-parser'
 
-const port = 3000
+const jsonBodyParser = bodyParser.json()
 
 const log = bunyan.createLogger({
 	name: 'github-webhooks-experiment',
 	serializers: bunyan.stdSerializers
 })
 
-const app = koa()
+const app = express()
 
-app.use(koaBunyanLogger(log))
-app.use(koaBunyanLogger.requestLogger())
+app.use(jsonBodyParser)
+app.use(expressBunyanLogger())
 
-app.use(function *() {
-	this.body = 'Hello World'
+app.get('/', function(req, res) {
+	res.send('Hello!')
+})
+
+app.post('/github', function(req, res) {
+	res.send(req.body)
 })
 
 log.info('Starting server.')
-const server = app.listen(port, function() {
+const server = app.listen(config.port, function() {
 	log.info({ address: server.address() }, 'Started server.')
 })
